@@ -15,8 +15,6 @@ namespace GastosMensuales.BD.Datos
         public DbSet <Ingreso> Ingresos { get; set; }
         public DbSet<GastoFijo> GastosFijos { get; set; }
         public DbSet<GastoDiario> GastosDiarios { get; set; }
-        public DbSet<GastoPorCategoria> GastosPorCategoria {  get; set; }
-        public DbSet<Total> Totales { get; set;}
 
 
 

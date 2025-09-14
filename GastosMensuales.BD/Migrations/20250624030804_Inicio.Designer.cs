@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GastosMensuales.BD.Migrations
 {
     [DbContext(typeof(MiDBcontext))]
-    [Migration("20250623050316_Inicio")]
+    [Migration("20250624030804_Inicio")]
     partial class Inicio
     {
         /// <inheritdoc />
@@ -231,7 +231,7 @@ namespace GastosMensuales.BD.Migrations
                         .IsRequired();
 
                     b.HasOne("GastosMensuales.BD.Datos.Entity.Usuario", "Usuario")
-                        .WithMany("GastosDiarios")
+                        .WithMany()
                         .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -250,7 +250,7 @@ namespace GastosMensuales.BD.Migrations
                         .IsRequired();
 
                     b.HasOne("GastosMensuales.BD.Datos.Entity.Usuario", "Usuario")
-                        .WithMany("GastosFijos")
+                        .WithMany()
                         .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -278,7 +278,7 @@ namespace GastosMensuales.BD.Migrations
                         .HasForeignKey("TotalId");
 
                     b.HasOne("GastosMensuales.BD.Datos.Entity.Usuario", "Usuario")
-                        .WithMany("Ingresos")
+                        .WithMany()
                         .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -287,15 +287,6 @@ namespace GastosMensuales.BD.Migrations
                 });
 
             modelBuilder.Entity("GastosMensuales.BD.Datos.Entity.Total", b =>
-                {
-                    b.Navigation("GastosDiarios");
-
-                    b.Navigation("GastosFijos");
-
-                    b.Navigation("Ingresos");
-                });
-
-            modelBuilder.Entity("GastosMensuales.BD.Datos.Entity.Usuario", b =>
                 {
                     b.Navigation("GastosDiarios");
 

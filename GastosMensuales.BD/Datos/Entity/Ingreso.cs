@@ -8,17 +8,16 @@ using System.Threading.Tasks;
 
 namespace GastosMensuales.BD.Datos.Entity
 {
-    public class Ingreso
+    public class Ingreso : EntityBase
     {
 
         public int UsuarioId { get; set; }
         public Usuario? Usuario { get; set; }
 
 
-        public int Id { get; set; }
 
         [Column(TypeName = "decimal(10, 2)")]
-        public required decimal Sueldo   { get; set; }
+        public decimal Sueldo   { get; set; }
 
         [Column(TypeName = "decimal(10, 2)")]
         public decimal Sobrante { get; set; }

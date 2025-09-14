@@ -8,20 +8,14 @@ using System.Threading.Tasks;
 
 namespace GastosMensuales.BD.Datos.Entity
 {
-    public class GastoDiario
+    public class GastoDiario : EntityBase
     {
 
         public int UsuarioId { get; set; }
         public Usuario? Usuario { get; set; }
+       
 
-        public int TotalId { get; set; }
-        public Total? Total { get; set; }
-
-
-        public int Id { get; set; }
-
-        public string Fecha { get; set; }
-        public string Mes { get; set; }
+        public DateTime Fecha { get; set; }
 
         [Required(ErrorMessage ="Debe aclarar el detalle")]
         [MaxLength(100, ErrorMessage ="Ha excedido el limite de caracteres")]

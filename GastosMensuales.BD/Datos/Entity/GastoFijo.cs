@@ -8,15 +8,12 @@ using System.Threading.Tasks;
 
 namespace GastosMensuales.BD.Datos.Entity
 {
-    public class GastoFijo
+    public class GastoFijo : EntityBase
     {
 
         public int UsuarioId { get; set; }
         public Usuario? Usuario { get; set; }
-
-        public int TotalId { get; set; }
-        public Total? Total { get; set; }
-        public int Id { get; set; }
+  
 
         [Required(ErrorMessage ="Tiene que ingresar el Detalle del gasto")]
         [MaxLength(100)]
@@ -28,7 +25,7 @@ namespace GastosMensuales.BD.Datos.Entity
 
         public  bool Pagado { get; set; }
 
-        public string FechaPagado { get; set; }
+        public DateTime FechaPagado { get; set; }
 
         [Column(TypeName = "decimal(10, 2)")]
         public required decimal Total_A_Pagar { get; set; } 

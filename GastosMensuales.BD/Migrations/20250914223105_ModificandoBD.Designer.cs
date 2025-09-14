@@ -4,6 +4,7 @@ using GastosMensuales.BD.Datos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GastosMensuales.BD.Migrations
 {
     [DbContext(typeof(MiDBcontext))]
-    partial class MiDBcontextModelSnapshot : ModelSnapshot
+    [Migration("20250914223105_ModificandoBD")]
+    partial class ModificandoBD
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
